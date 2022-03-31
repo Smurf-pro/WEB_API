@@ -1,0 +1,1110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Inventarizacia_ob_VUZaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Akusticheskaya_system">
+          <Key>
+            <PropertyRef Name="Id_ak_sys" />
+          </Key>
+          <Property Name="Id_ak_sys" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Serial_number_ak_syst" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Max_power" Type="int" />
+          <Property Name="Zvukovaya_shema" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Item_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Auditoriya">
+          <Key>
+            <PropertyRef Name="Id_aud" />
+          </Key>
+          <Property Name="Id_aud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="Floor" Type="int" Nullable="false" />
+          <Property Name="Place" Type="varchar" MaxLength="23" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Computers">
+          <Key>
+            <PropertyRef Name="Id_comp" />
+          </Key>
+          <Property Name="Id_comp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Serial_number_pc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Processor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Operativnaya_pamyt" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hard_drive" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="SolidStateDrive" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Videokarta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OC" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Item_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_em" />
+          </Key>
+          <Property Name="ID_em" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIO" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Short" Type="varchar" MaxLength="65" Nullable="false" />
+          <Property Name="Phone" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Akusticheskaya_system">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Computers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Klaviatura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Monitor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Mouse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Printer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Proector">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Scaner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Sklad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Klaviatura">
+          <Key>
+            <PropertyRef Name="Id_keybord" />
+          </Key>
+          <Property Name="Id_keybord" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Serial_number_klaviatura" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Interface_podlkuchenia" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Type_klaviatur" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Item_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="Id_monitor" />
+          </Key>
+          <Property Name="Id_monitor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Serial_number_monitor" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Diagonal_ekrana" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Max_chastota_obnovleniya" Type="int" />
+          <Property Name="Razreshenie" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Item_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mouse">
+          <Key>
+            <PropertyRef Name="Id_mouse" />
+          </Key>
+          <Property Name="Id_mouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Serial_number_mouse" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type_soedineniya" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Interface_mouse" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Max_razreshenie_datchika" Type="int" Nullable="false" />
+          <Property Name="Item_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Printer">
+          <Key>
+            <PropertyRef Name="Id_printer" />
+          </Key>
+          <Property Name="Id_printer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Serial_number_printer" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type_printera" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Cvetnost_pechati" Type="varchar" MaxLength="15" />
+          <Property Name="Max_speed_pechati" Type="int" Nullable="false" />
+          <Property Name="Max_format_pechati" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="Item_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proector">
+          <Key>
+            <PropertyRef Name="Id_proector" />
+          </Key>
+          <Property Name="Id_proector" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Serial_number_proector" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Razreshenie" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Pikovaya_yarkost" Type="int" />
+          <Property Name="Sootnoshenie_storon_ekrana" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Item_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Scaner">
+          <Key>
+            <PropertyRef Name="Id_scaner" />
+          </Key>
+          <Property Name="Id_scaner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Serial_number_scaner" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type_skanera" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Dvustoron_scan" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="Max_format_originala" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Item_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sklad">
+          <Key>
+            <PropertyRef Name="ID_item" />
+          </Key>
+          <Property Name="ID_item" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Invent_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ser_num" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_oborudovaniya_" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazvanie_ob" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mesto_Hraneniya" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Building" Type="varchar" MaxLength="23" Nullable="false" />
+          <Property Name="Emp_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID_user" />
+          </Key>
+          <Property Name="ID_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="57" Nullable="false" />
+          <Property Name="Read_" Type="bit" Nullable="false" />
+          <Property Name="Delete_" Type="bit" Nullable="false" />
+          <Property Name="Add_" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Invent_num_ak_sys">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Akusticheskaya_system" Type="Self.Akusticheskaya_system" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Akusticheskaya_system">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_comp">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Computers">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_klaviatura">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Klaviatura" Type="Self.Klaviatura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Klaviatura">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_monitor">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_mouse">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_printer">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Printer" Type="Self.Printer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Printer">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_proector">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Proector" Type="Self.Proector" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Proector">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_scaner">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Scaner" Type="Self.Scaner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Scaner">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6035: В связи "FK_Login" имеются столбцы, которые не являются частью ключа таблицы на первичной стороне связи. Связь исключена.
+        <Association Name="FK_Login" />-->
+        <EntityContainer Name="Хранилище Inventarizacia_ob_VUZaModelContainer">
+          <EntitySet Name="Akusticheskaya_system" EntityType="Self.Akusticheskaya_system" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Auditoriya" EntityType="Self.Auditoriya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Computers" EntityType="Self.Computers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Akusticheskaya_system" EntityType="Self.History_Akusticheskaya_system" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Computers" EntityType="Self.History_Computers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Klaviatura" EntityType="Self.History_Klaviatura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Monitor" EntityType="Self.History_Monitor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Mouse" EntityType="Self.History_Mouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Printer" EntityType="Self.History_Printer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Proector" EntityType="Self.History_Proector" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Scaner" EntityType="Self.History_Scaner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Sklad" EntityType="Self.History_Sklad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Klaviatura" EntityType="Self.Klaviatura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Monitor" EntityType="Self.Monitor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mouse" EntityType="Self.Mouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Printer" EntityType="Self.Printer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proector" EntityType="Self.Proector" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scaner" EntityType="Self.Scaner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sklad" EntityType="Self.Sklad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Invent_num_ak_sys" Association="Self.FK_Invent_num_ak_sys">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Akusticheskaya_system" EntitySet="Akusticheskaya_system" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_comp" Association="Self.FK_Invent_num_comp">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Computers" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_klaviatura" Association="Self.FK_Invent_num_klaviatura">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Klaviatura" EntitySet="Klaviatura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_monitor" Association="Self.FK_Invent_num_monitor">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_mouse" Association="Self.FK_Invent_num_mouse">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_printer" Association="Self.FK_Invent_num_printer">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Printer" EntitySet="Printer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_proector" Association="Self.FK_Invent_num_proector">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Proector" EntitySet="Proector" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_scaner" Association="Self.FK_Invent_num_scaner">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Scaner" EntitySet="Scaner" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Inventarizacia_ob_VUZaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Akusticheskaya_system">
+          <Key>
+            <PropertyRef Name="Id_ak_sys" />
+          </Key>
+          <Property Name="Id_ak_sys" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Serial_number_ak_syst" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Max_power" Type="Int32" />
+          <Property Name="Zvukovaya_shema" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklad" Relationship="Self.FK_Invent_num_ak_sys" FromRole="Akusticheskaya_system" ToRole="Sklad" />
+        </EntityType>
+        <EntityType Name="Auditoriya">
+          <Key>
+            <PropertyRef Name="Id_aud" />
+          </Key>
+          <Property Name="Id_aud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazvanie" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Floor" Type="Int32" Nullable="false" />
+          <Property Name="Place" Type="String" MaxLength="23" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Computers">
+          <Key>
+            <PropertyRef Name="Id_comp" />
+          </Key>
+          <Property Name="Id_comp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Serial_number_pc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Processor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operativnaya_pamyt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hard_drive" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SolidStateDrive" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Videokarta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklad" Relationship="Self.FK_Invent_num_comp" FromRole="Computers" ToRole="Sklad" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_em" />
+          </Key>
+          <Property Name="ID_em" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Short" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Akusticheskaya_system">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="History_Computers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="History_Klaviatura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="History_Monitor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="History_Mouse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="History_Printer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="History_Proector">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="History_Scaner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="History_Sklad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Klaviatura">
+          <Key>
+            <PropertyRef Name="Id_keybord" />
+          </Key>
+          <Property Name="Id_keybord" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Serial_number_klaviatura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Interface_podlkuchenia" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_klaviatur" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklad" Relationship="Self.FK_Invent_num_klaviatura" FromRole="Klaviatura" ToRole="Sklad" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="Id_monitor" />
+          </Key>
+          <Property Name="Id_monitor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Serial_number_monitor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Diagonal_ekrana" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Max_chastota_obnovleniya" Type="Int32" />
+          <Property Name="Razreshenie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklad" Relationship="Self.FK_Invent_num_monitor" FromRole="Monitor" ToRole="Sklad" />
+        </EntityType>
+        <EntityType Name="Mouse">
+          <Key>
+            <PropertyRef Name="Id_mouse" />
+          </Key>
+          <Property Name="Id_mouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Serial_number_mouse" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_soedineniya" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Interface_mouse" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Max_razreshenie_datchika" Type="Int32" Nullable="false" />
+          <Property Name="Item_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklad" Relationship="Self.FK_Invent_num_mouse" FromRole="Mouse" ToRole="Sklad" />
+        </EntityType>
+        <EntityType Name="Printer">
+          <Key>
+            <PropertyRef Name="Id_printer" />
+          </Key>
+          <Property Name="Id_printer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Serial_number_printer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_printera" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cvetnost_pechati" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Max_speed_pechati" Type="Int32" Nullable="false" />
+          <Property Name="Max_format_pechati" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklad" Relationship="Self.FK_Invent_num_printer" FromRole="Printer" ToRole="Sklad" />
+        </EntityType>
+        <EntityType Name="Proector">
+          <Key>
+            <PropertyRef Name="Id_proector" />
+          </Key>
+          <Property Name="Id_proector" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Serial_number_proector" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Razreshenie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pikovaya_yarkost" Type="Int32" />
+          <Property Name="Sootnoshenie_storon_ekrana" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklad" Relationship="Self.FK_Invent_num_proector" FromRole="Proector" ToRole="Sklad" />
+        </EntityType>
+        <EntityType Name="Scaner">
+          <Key>
+            <PropertyRef Name="Id_scaner" />
+          </Key>
+          <Property Name="Id_scaner" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Serial_number_scaner" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_skanera" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dvustoron_scan" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Max_format_originala" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklad" Relationship="Self.FK_Invent_num_scaner" FromRole="Scaner" ToRole="Sklad" />
+        </EntityType>
+        <EntityType Name="Sklad">
+          <Key>
+            <PropertyRef Name="ID_item" />
+          </Key>
+          <Property Name="ID_item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Invent_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ser_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_oborudovaniya_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazvanie_ob" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mesto_Hraneniya" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Building" Type="String" MaxLength="23" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Emp_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Akusticheskaya_system" Relationship="Self.FK_Invent_num_ak_sys" FromRole="Sklad" ToRole="Akusticheskaya_system" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_Invent_num_comp" FromRole="Sklad" ToRole="Computers" />
+          <NavigationProperty Name="Klaviatura" Relationship="Self.FK_Invent_num_klaviatura" FromRole="Sklad" ToRole="Klaviatura" />
+          <NavigationProperty Name="Monitor" Relationship="Self.FK_Invent_num_monitor" FromRole="Sklad" ToRole="Monitor" />
+          <NavigationProperty Name="Mouse" Relationship="Self.FK_Invent_num_mouse" FromRole="Sklad" ToRole="Mouse" />
+          <NavigationProperty Name="Printer" Relationship="Self.FK_Invent_num_printer" FromRole="Sklad" ToRole="Printer" />
+          <NavigationProperty Name="Proector" Relationship="Self.FK_Invent_num_proector" FromRole="Sklad" ToRole="Proector" />
+          <NavigationProperty Name="Scaner" Relationship="Self.FK_Invent_num_scaner" FromRole="Sklad" ToRole="Scaner" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID_user" />
+          </Key>
+          <Property Name="ID_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="57" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Read_" Type="Boolean" Nullable="false" />
+          <Property Name="Delete_" Type="Boolean" Nullable="false" />
+          <Property Name="Add_" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Invent_num_ak_sys">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Akusticheskaya_system" Type="Self.Akusticheskaya_system" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Akusticheskaya_system">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_comp">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Computers">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_klaviatura">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Klaviatura" Type="Self.Klaviatura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Klaviatura">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_monitor">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_mouse">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_printer">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Printer" Type="Self.Printer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Printer">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_proector">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Proector" Type="Self.Proector" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Proector">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invent_num_scaner">
+          <End Role="Sklad" Type="Self.Sklad" Multiplicity="1" />
+          <End Role="Scaner" Type="Self.Scaner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklad">
+              <PropertyRef Name="ID_item" />
+            </Principal>
+            <Dependent Role="Scaner">
+              <PropertyRef Name="Item_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Inventarizacia_ob_VUZaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Akusticheskaya_system" EntityType="Self.Akusticheskaya_system" />
+          <EntitySet Name="Auditoriya" EntityType="Self.Auditoriya" />
+          <EntitySet Name="Computers" EntityType="Self.Computers" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="History_Akusticheskaya_system" EntityType="Self.History_Akusticheskaya_system" />
+          <EntitySet Name="History_Computers" EntityType="Self.History_Computers" />
+          <EntitySet Name="History_Klaviatura" EntityType="Self.History_Klaviatura" />
+          <EntitySet Name="History_Monitor" EntityType="Self.History_Monitor" />
+          <EntitySet Name="History_Mouse" EntityType="Self.History_Mouse" />
+          <EntitySet Name="History_Printer" EntityType="Self.History_Printer" />
+          <EntitySet Name="History_Proector" EntityType="Self.History_Proector" />
+          <EntitySet Name="History_Scaner" EntityType="Self.History_Scaner" />
+          <EntitySet Name="History_Sklad" EntityType="Self.History_Sklad" />
+          <EntitySet Name="Klaviatura" EntityType="Self.Klaviatura" />
+          <EntitySet Name="Monitor" EntityType="Self.Monitor" />
+          <EntitySet Name="Mouse" EntityType="Self.Mouse" />
+          <EntitySet Name="Printer" EntityType="Self.Printer" />
+          <EntitySet Name="Proector" EntityType="Self.Proector" />
+          <EntitySet Name="Scaner" EntityType="Self.Scaner" />
+          <EntitySet Name="Sklad" EntityType="Self.Sklad" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_Invent_num_ak_sys" Association="Self.FK_Invent_num_ak_sys">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Akusticheskaya_system" EntitySet="Akusticheskaya_system" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_comp" Association="Self.FK_Invent_num_comp">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Computers" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_klaviatura" Association="Self.FK_Invent_num_klaviatura">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Klaviatura" EntitySet="Klaviatura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_monitor" Association="Self.FK_Invent_num_monitor">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_mouse" Association="Self.FK_Invent_num_mouse">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_printer" Association="Self.FK_Invent_num_printer">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Printer" EntitySet="Printer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_proector" Association="Self.FK_Invent_num_proector">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Proector" EntitySet="Proector" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invent_num_scaner" Association="Self.FK_Invent_num_scaner">
+            <End Role="Sklad" EntitySet="Sklad" />
+            <End Role="Scaner" EntitySet="Scaner" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Inventarizacia_ob_VUZaModelContainer" CdmEntityContainer="Inventarizacia_ob_VUZaEntities">
+          <EntitySetMapping Name="Akusticheskaya_system">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Akusticheskaya_system">
+              <MappingFragment StoreEntitySet="Akusticheskaya_system">
+                <ScalarProperty Name="Id_ak_sys" ColumnName="Id_ak_sys" />
+                <ScalarProperty Name="Serial_number_ak_syst" ColumnName="Serial_number_ak_syst" />
+                <ScalarProperty Name="Type_oborudovaniya" ColumnName="Type_oborudovaniya" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Max_power" ColumnName="Max_power" />
+                <ScalarProperty Name="Zvukovaya_shema" ColumnName="Zvukovaya_shema" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Auditoriya">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Auditoriya">
+              <MappingFragment StoreEntitySet="Auditoriya">
+                <ScalarProperty Name="Id_aud" ColumnName="Id_aud" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Computers">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Computers">
+              <MappingFragment StoreEntitySet="Computers">
+                <ScalarProperty Name="Id_comp" ColumnName="Id_comp" />
+                <ScalarProperty Name="Serial_number_pc" ColumnName="Serial_number_pc" />
+                <ScalarProperty Name="Type_oborudovaniya" ColumnName="Type_oborudovaniya" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Processor" ColumnName="Processor" />
+                <ScalarProperty Name="Operativnaya_pamyt" ColumnName="Operativnaya_pamyt" />
+                <ScalarProperty Name="Hard_drive" ColumnName="Hard_drive" />
+                <ScalarProperty Name="SolidStateDrive" ColumnName="SolidStateDrive" />
+                <ScalarProperty Name="Videokarta" ColumnName="Videokarta" />
+                <ScalarProperty Name="OC" ColumnName="OC" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID_em" ColumnName="ID_em" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Short" ColumnName="Short" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Akusticheskaya_system">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Akusticheskaya_system">
+              <MappingFragment StoreEntitySet="History_Akusticheskaya_system">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Computers">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Computers">
+              <MappingFragment StoreEntitySet="History_Computers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Klaviatura">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Klaviatura">
+              <MappingFragment StoreEntitySet="History_Klaviatura">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Monitor">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Monitor">
+              <MappingFragment StoreEntitySet="History_Monitor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Mouse">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Mouse">
+              <MappingFragment StoreEntitySet="History_Mouse">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Printer">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Printer">
+              <MappingFragment StoreEntitySet="History_Printer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Proector">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Proector">
+              <MappingFragment StoreEntitySet="History_Proector">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Scaner">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Scaner">
+              <MappingFragment StoreEntitySet="History_Scaner">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Sklad">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.History_Sklad">
+              <MappingFragment StoreEntitySet="History_Sklad">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Inv_num" ColumnName="Inv_num" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Klaviatura">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Klaviatura">
+              <MappingFragment StoreEntitySet="Klaviatura">
+                <ScalarProperty Name="Id_keybord" ColumnName="Id_keybord" />
+                <ScalarProperty Name="Serial_number_klaviatura" ColumnName="Serial_number_klaviatura" />
+                <ScalarProperty Name="Type_oborudovaniya" ColumnName="Type_oborudovaniya" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Interface_podlkuchenia" ColumnName="Interface_podlkuchenia" />
+                <ScalarProperty Name="Type_klaviatur" ColumnName="Type_klaviatur" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monitor">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Monitor">
+              <MappingFragment StoreEntitySet="Monitor">
+                <ScalarProperty Name="Id_monitor" ColumnName="Id_monitor" />
+                <ScalarProperty Name="Serial_number_monitor" ColumnName="Serial_number_monitor" />
+                <ScalarProperty Name="Type_oborudovaniya" ColumnName="Type_oborudovaniya" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Diagonal_ekrana" ColumnName="Diagonal_ekrana" />
+                <ScalarProperty Name="Max_chastota_obnovleniya" ColumnName="Max_chastota_obnovleniya" />
+                <ScalarProperty Name="Razreshenie" ColumnName="Razreshenie" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mouse">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Mouse">
+              <MappingFragment StoreEntitySet="Mouse">
+                <ScalarProperty Name="Id_mouse" ColumnName="Id_mouse" />
+                <ScalarProperty Name="Serial_number_mouse" ColumnName="Serial_number_mouse" />
+                <ScalarProperty Name="Type_oborudovaniya" ColumnName="Type_oborudovaniya" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Type_soedineniya" ColumnName="Type_soedineniya" />
+                <ScalarProperty Name="Interface_mouse" ColumnName="Interface_mouse" />
+                <ScalarProperty Name="Max_razreshenie_datchika" ColumnName="Max_razreshenie_datchika" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Printer">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Printer">
+              <MappingFragment StoreEntitySet="Printer">
+                <ScalarProperty Name="Id_printer" ColumnName="Id_printer" />
+                <ScalarProperty Name="Serial_number_printer" ColumnName="Serial_number_printer" />
+                <ScalarProperty Name="Type_oborudovaniya" ColumnName="Type_oborudovaniya" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Type_printera" ColumnName="Type_printera" />
+                <ScalarProperty Name="Cvetnost_pechati" ColumnName="Cvetnost_pechati" />
+                <ScalarProperty Name="Max_speed_pechati" ColumnName="Max_speed_pechati" />
+                <ScalarProperty Name="Max_format_pechati" ColumnName="Max_format_pechati" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proector">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Proector">
+              <MappingFragment StoreEntitySet="Proector">
+                <ScalarProperty Name="Id_proector" ColumnName="Id_proector" />
+                <ScalarProperty Name="Serial_number_proector" ColumnName="Serial_number_proector" />
+                <ScalarProperty Name="Type_oborudovaniya" ColumnName="Type_oborudovaniya" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Razreshenie" ColumnName="Razreshenie" />
+                <ScalarProperty Name="Pikovaya_yarkost" ColumnName="Pikovaya_yarkost" />
+                <ScalarProperty Name="Sootnoshenie_storon_ekrana" ColumnName="Sootnoshenie_storon_ekrana" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scaner">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Scaner">
+              <MappingFragment StoreEntitySet="Scaner">
+                <ScalarProperty Name="Id_scaner" ColumnName="Id_scaner" />
+                <ScalarProperty Name="Serial_number_scaner" ColumnName="Serial_number_scaner" />
+                <ScalarProperty Name="Type_oborudovaniya" ColumnName="Type_oborudovaniya" />
+                <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+                <ScalarProperty Name="Type_skanera" ColumnName="Type_skanera" />
+                <ScalarProperty Name="Dvustoron_scan" ColumnName="Dvustoron_scan" />
+                <ScalarProperty Name="Max_format_originala" ColumnName="Max_format_originala" />
+                <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sklad">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Sklad">
+              <MappingFragment StoreEntitySet="Sklad">
+                <ScalarProperty Name="ID_item" ColumnName="ID_item" />
+                <ScalarProperty Name="Invent_num" ColumnName="Invent_num" />
+                <ScalarProperty Name="Ser_num" ColumnName="Ser_num" />
+                <ScalarProperty Name="Type_oborudovaniya_" ColumnName="Type_oborudovaniya_" />
+                <ScalarProperty Name="Nazvanie_ob" ColumnName="Nazvanie_ob" />
+                <ScalarProperty Name="Mesto_Hraneniya" ColumnName="Mesto_Hraneniya" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Inventarizacia_ob_VUZaModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID_user" ColumnName="ID_user" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Read_" ColumnName="Read_" />
+                <ScalarProperty Name="Delete_" ColumnName="Delete_" />
+                <ScalarProperty Name="Add_" ColumnName="Add_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

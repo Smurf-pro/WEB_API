@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="daee704f782740e7b46c933d88d6d5c4" Name="Diagram1">
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Akusticheskaya_system" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Auditoriya" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Computers" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Employee" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Akusticheskaya_system" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Computers" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Klaviatura" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Monitor" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Mouse" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Printer" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Proector" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Scaner" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.History_Sklad" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Klaviatura" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Monitor" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Mouse" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Printer" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Proector" Width="1.5" PointX="3" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Scaner" Width="1.5" PointX="3" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Sklad" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Inventarizacia_ob_VUZaModel.Users" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Inventarizacia_ob_VUZaModel.FK_Invent_num_ak_sys" ManuallyRouted="false" />
+        <AssociationConnector Association="Inventarizacia_ob_VUZaModel.FK_Invent_num_comp" ManuallyRouted="false" />
+        <AssociationConnector Association="Inventarizacia_ob_VUZaModel.FK_Invent_num_klaviatura" ManuallyRouted="false" />
+        <AssociationConnector Association="Inventarizacia_ob_VUZaModel.FK_Invent_num_monitor" ManuallyRouted="false" />
+        <AssociationConnector Association="Inventarizacia_ob_VUZaModel.FK_Invent_num_mouse" ManuallyRouted="false" />
+        <AssociationConnector Association="Inventarizacia_ob_VUZaModel.FK_Invent_num_printer" ManuallyRouted="false" />
+        <AssociationConnector Association="Inventarizacia_ob_VUZaModel.FK_Invent_num_proector" ManuallyRouted="false" />
+        <AssociationConnector Association="Inventarizacia_ob_VUZaModel.FK_Invent_num_scaner" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
